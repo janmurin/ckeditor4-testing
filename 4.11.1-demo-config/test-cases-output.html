@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<!--Test Case 1: app=this demo + enterMode=CKEDITOR.ENTER_BR-->
+<!--content before:-->
+<body contenteditable="true" class="cke_editable cke_editable_themed cke_contents_ltr FLITE-Tracking cke_show_borders" spellcheck="false" data-flite-body="1">
+	<hr>
+	<p>
+		<span style="font-size:12pt">
+			<span style="font-family:Tahoma,Geneva,sans-serif">Dette er siste linjen i dokumentet</span>
+		</span>
+	</p>
+</body>
+<!--place cursor at the end of word "documentet" and press ENTER-->
+<!--content after:-->
+<body contenteditable="true" class="cke_editable cke_editable_themed cke_contents_ltr FLITE-Tracking cke_show_borders" spellcheck="false" data-flite-body="1">
+	<hr>
+	<p>
+		<span style="font-size:12pt">
+			<span style="font-family:Tahoma,Geneva,sans-serif">Dette er siste linjen i dokumentet
+				<br data-flite-cid="3" data-username="Fred" data-userid="18" data-flite-marked="1" data-changedata="" data-time="1557162019071" data-last-change-time="1557162019071" class="ice-cts-2 ice-ins">​​​​​​​
+			</span>
+		</span>
+		<br data-flite-cid="3" data-username="Fred" data-userid="18" data-flite-marked="1" data-changedata="" data-time="1557162019071" data-last-change-time="1557162019071" class="ice-cts-2 ice-ins">
+	</p>
+</body>
+
+<!--Test Case 2: app=this demo + enterMode=CKEDITOR.ENTER_P-->
+<!--content before:-->
+<body contenteditable="true" class="cke_editable cke_editable_themed cke_contents_ltr cke_show_borders FLITE-Tracking" spellcheck="false" data-flite-body="1">
+	<hr>
+	<p>
+		<span style="font-size:12pt">
+			<span style="font-family:Tahoma,Geneva,sans-serif">Dette er siste linjen i dokumentet</span>
+		</span>
+	</p>
+</body>
+<!--place cursor at the end of word "documentet" and press ENTER-->
+<!--content after:-->
+<body contenteditable="true" class="cke_editable cke_editable_themed cke_contents_ltr cke_show_borders FLITE-Tracking" spellcheck="false" data-flite-body="1">
+	<hr>
+	<p>
+		<span style="font-size:12pt">
+			<span style="font-family:Tahoma,Geneva,sans-serif">Dette er siste linjen i dokumentet</span>
+		</span>
+	</p>
+	<p data-flite-cid="3" data-username="Fred" data-userid="18" data-flite-marked="1" data-changedata="" data-time="1557162154201" data-last-change-time="1557162154202" class="ice-cts-2 ice-ins flite-container-only">
+		<span style="font-size:12pt">
+			<span style="font-family:Tahoma,Geneva,sans-serif"></span>
+		</span>
+		<br data-flite-cid="3" data-username="Fred" data-userid="18" data-flite-marked="1" data-changedata="" data-time="1557162154201" data-last-change-time="1557162154202" class="ice-cts-2 ice-ins">
+	</p>
+</body>
+
+
+<!--Test Case 3: app=PPT + enterMode=CKEDITOR.ENTER_BR-->
+<!--content before:-->
+<body contenteditable="true" class="cke_editable cke_editable_themed cke_contents_ltr cke_show_borders FLITE-Tracking" spellcheck="false" data-flite-body="1">
+	<hr>
+	<br>
+	<p>
+		<span style="font-size:12pt">
+			<span style="font-family:Tahoma,Geneva,sans-serif">Dette er siste linjen i dokumentet</span>
+		</span>
+	</p>
+	<p id="show-changes" data-show-changes="false" style="display:none"></p>
+</body>
+<!--place cursor at the end of word "documentet" and press ENTER-->
+<!--content after:-->
+<!--text "Dette er siste linjen i dokumentet" is selected and another keypress would erase it-->
+<body contenteditable="true" class="cke_editable cke_editable_themed cke_contents_ltr cke_show_borders FLITE-Tracking" spellcheck="false" data-flite-body="1">
+	<hr>
+	<br>
+	<p>
+		<span style="font-size:12pt;">
+			<span style="font-family:Calibri;">Dette er siste linjen i dokumentet<br><br></span>
+		</span>
+	</p>
+	<p id="show-changes" data-show-changes="false" style="display:none"></p>
+</body>
+
+<!--Test Case 4: app=PPT + enterMode=CKEDITOR.ENTER_P-->
+<!--content before:-->
+<body contenteditable="true" class="cke_editable cke_editable_themed cke_contents_ltr cke_show_borders" spellcheck="false" data-flite-body="1">
+	<hr>
+	<br>
+	<p>
+		<span style="font-size:12pt">
+			<span style="font-family:Tahoma,Geneva,sans-serif">Dette er siste linjen i dokumentet</span>
+		</span>
+	</p>
+	<p id="show-changes" data-show-changes="false" style="display:none"></p>
+</body>
+<!--place cursor at the end of word "documentet" and press ENTER-->
+<!--content after:-->
+<!--text "Dette er siste linjen i dokumentet" is NOT selected-->
+<body contenteditable="true" class="cke_editable cke_editable_themed cke_contents_ltr cke_show_borders FLITE-Tracking" spellcheck="false" data-flite-body="1">
+	<hr>
+	<br>
+	<p>
+		<span style="font-size:12pt">
+			<span style="font-family:Tahoma,Geneva,sans-serif">Dette er siste linjen i dokumentet</span>
+		</span>
+	</p>
+	<p data-flite-cid="3" data-username="Arthur Almenning" data-userid="38256" data-flite-marked="1" data-changedata="" data-time="1557163286421" data-last-change-time="1557163286421" class="ice-cts-1 ice-ins flite-container-only">
+		<span style="font-size:12pt">
+			<span style="font-family:Tahoma,Geneva,sans-serif"></span>
+		</span>
+		<br data-flite-cid="3" data-username="Arthur Almenning" data-userid="38256" data-flite-marked="1" data-changedata="" data-time="1557163286421" data-last-change-time="1557163286421" class="ice-cts-1 ice-ins">
+	</p>
+	<p id="show-changes" data-show-changes="false" style="display:none"></p>
+</body>
+
+
+
+</body>
+</html>

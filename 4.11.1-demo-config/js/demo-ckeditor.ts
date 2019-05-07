@@ -66,7 +66,7 @@ const MAX_EDITORS = 4;
 			},
 			tooltipTemplate: "%a by %u, first edit %t, last edit %T"
 		},
-		enterMode: CKEDITOR.ENTER_BR,
+		enterMode: CKEDITOR.ENTER_P,
 		autoParagraph: false,
 		title: false
 	};
