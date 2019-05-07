@@ -19,25 +19,25 @@ var MAX_EDITORS = 4;
     var EDITOR_OPTIONS = {
         width: "100%",
         height: "20%",
-        extraPlugins: "flite",
-        removePlugins: "registered,pagebreakCmd,pagebreak,indentblock,indent,indentlist,list,pastefromword,flash,showblocks,specialchar,colordialog,div,divarea,templates",
-        toolbarGroups: [
-            { name: 'document', groups: ['mode', 'document', 'doctools'] },
-            { name: 'clipboard', groups: ['clipboard', 'undo'] },
-            { name: 'editing', groups: ['find', 'selection', 'spellchecker'] },
+        extraPlugins: 'base64image,font,justify,colorbutton,copyformatting,pagebreak,customFormat,customTab,capitalizeLetter,lance,save,pasteFromGoogleDoc,flite',
+        removePlugins: 'image,flash,forms,print,preview,iframe,templates,elementspath,format,tab,bidi,dialogadvtab,find,language,liststyle,newpage,selectall,smiley,colordialog,div,indentblock,showblocks',
+        toolbar: [
+            { name: 'tools', items: ['Maximize', 'Save'] },
+            { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'] },
+            { name: 'editing', groups: ['find', 'selection', 'spellchecker'], items: ['Find', 'Replace', 'SelectAll', 'Scayt'] },
+            { name: 'links', items: ['Link', 'Unlink', 'Anchor'] },
+            { name: 'insert', items: ['Table', 'HorizontalRule', 'SpecialChar', 'PageBreak', 'base64image'] },
             { name: 'forms' },
+            { name: 'document', items: ['Source'] },
+            { name: 'others', items: ['mergeFieldsCombo'] },
             '/',
-            { name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
-            { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi'] },
-            { name: 'links' },
-            { name: 'insert' },
-            '/',
-            { name: 'styles' },
-            { name: 'colors' },
-            { name: 'tools' },
-            { name: "flite" },
-            { name: 'others' },
-            { name: 'about' }
+            { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', '-', 'CopyFormatting', 'RemoveFormat'] },
+            { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'] },
+            { name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize'] },
+            { name: 'colors', items: ['TextColor', 'BGColor'] },
+            { name: 'about', items: ['About'] },
+            { name: 'lance', items: ['annotate'] },
+            { name: "flite", items: ["flite-toggletracking", "flite-toggleshow", "flite-acceptone", "flite-rejectone", "flite-acceptall", "flite-rejectall"] },
         ],
         flite: {
             // set to false if you want change tracking to be off initially
@@ -180,6 +180,17 @@ var MAX_EDITORS = 4;
             }
             editor.on("loaded", function () {
                 var availHeight = $(".editor-tabs").height(), editorHeight = Math.round(availHeight / (nEditors));
+                console.log("editor plugins: ");
+                // console.log(JSON.stringify(editor.plugins));
+                var obj = editor.plugins;
+                var names = [];
+                for (var property in obj) {
+                    if (obj.hasOwnProperty(property)) {
+                        names.push(obj[property].name);
+                    }
+                }
+                console.log(JSON.stringify(names.sort()));
+                console.log(names.sort());
                 _this.editorStates[id] = new EditorState(editor);
                 Object.keys(_this.editorStates).forEach(function (key) {
                     var state = _this.editorStates[key];

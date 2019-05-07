@@ -180,6 +180,17 @@ var MAX_EDITORS = 4;
             }
             editor.on("loaded", function () {
                 var availHeight = $(".editor-tabs").height(), editorHeight = Math.round(availHeight / (nEditors));
+                console.log("editor plugins: ");
+                // console.log(JSON.stringify(editor.plugins));
+                var obj = editor.plugins;
+                var names = [];
+                for (var property in obj) {
+                    if (obj.hasOwnProperty(property)) {
+                        names.push(obj[property].name);
+                    }
+                }
+                console.log(JSON.stringify(names.sort()));
+                console.log(names.sort());
                 _this.editorStates[id] = new EditorState(editor);
                 Object.keys(_this.editorStates).forEach(function (key) {
                     var state = _this.editorStates[key];

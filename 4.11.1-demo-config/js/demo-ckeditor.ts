@@ -232,6 +232,18 @@ const MAX_EDITORS = 4;
 				let availHeight: number = $(".editor-tabs").height(),
 					editorHeight = Math.round(availHeight / (nEditors));
 
+                console.log("editor plugins: ");
+                // console.log(JSON.stringify(editor.plugins));
+                var obj: any = editor.plugins;
+                var names = [];
+                for (var property in obj) {
+                    if (obj.hasOwnProperty(property)) {
+                        names.push(obj[property].name);
+                    }
+                }
+                console.log(JSON.stringify(names.sort()));
+                console.log(names.sort());
+
 				this.editorStates[id] = new EditorState(editor);
 				Object.keys(this.editorStates).forEach((key: string) => {
 					let state: EditorState = this.editorStates[key];
