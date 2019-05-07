@@ -199,7 +199,17 @@ var MAX_EDITORS = 4;
             editor.on(FLITE.Events.INIT, function (event) {
                 var flite = event.data.flite;
                 flite.toggleShow(true);
-                $(".flite-version").html(flite.version);
+                var enter = "N/A";
+                if (EDITOR_OPTIONS.enterMode == CKEDITOR.ENTER_BR) {
+                    enter = 'ENTER_BR';
+                }
+                else if (EDITOR_OPTIONS.enterMode == CKEDITOR.ENTER_P) {
+                    enter = 'ENTER_P';
+                }
+                else if (EDITOR_OPTIONS.enterMode == CKEDITOR.ENTER_DIV) {
+                    enter = 'ENTER_DIV';
+                }
+                $(".flite-version").html(flite.version + "   " + enter);
             });
             if (focus) {
                 editor.on(FLITE.Events.INIT, function (event) {
