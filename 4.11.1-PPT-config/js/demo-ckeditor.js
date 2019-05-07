@@ -87,6 +87,7 @@ var MAX_EDITORS = 4;
             $(".ckeditor-version-name").html(CKEDITOR.version);
             CKEDITOR.timestamp = 0x8999;
             $(".ckeditor-version").html(CKEDITOR.version);
+            this.setSpellChecker();
             // Create users dropdown menu
             (function () {
                 var select = _this.$select[0];
@@ -230,6 +231,31 @@ var MAX_EDITORS = 4;
                     _this.onEditorSelected(id);
                 });
             }
+        };
+        Demo.prototype.setSpellChecker = function () {
+            var languagesById = {
+                1: "nb_NO",
+                2: "nn_NO",
+                3: "se_NO",
+                4: "en_US"
+            };
+            //Spelling-Language. For now always choose norwegian bokmål - later on we must remember what user has selected and choose that one over again. Can't be depended on ui-language!
+            //it seems like within same session (even with a refresh of browser) the selected spelling-language by enduser is always remembered (due to localstorage items for webspellchecker).
+            var spellingLanguage = "nb_NO";
+            //Must handle the URL to support either the one that is accessible from internet and the one that is only accessible from NHN
+            //https://webspellchecker.visma.com vs https://webspellchecker.nhn.visma.com
+            CKEDITOR.config.scayt_srcUrl = 'https://webspellchecker.visma.com/spellcheck/lf/scayt3/ckscayt/ckscayt.js?1554481948628';
+            CKEDITOR.config.wsc_customLoaderScript = 'https://webspellchecker.visma.com/spellcheck/lf/22/js/wsc_fck2plugin.js';
+            //http://wiki.webspellchecker.net/doku.php?id=scayt_parameters_ckeditor4&s[]=encrypted&s[]=customer&s[]=id
+            //config.scayt_customerId = 'your-long-encrypted-customer-id';
+            CKEDITOR.config.scayt_autoStartup = false;
+            CKEDITOR.config.scayt_ignoreAllCapsWords = true;
+            CKEDITOR.config.scayt_ignoreDomainNames = true;
+            CKEDITOR.config.scayt_sLang = spellingLanguage;
+            CKEDITOR.config.wsc_lang = spellingLanguage;
+            //we can't save customer dictonaries yet - so remove 'add' by stating to only show ignore
+            CKEDITOR.config.scayt_contextCommands = 'ignore';
+            //config.scayt_userDictionaryName = 'MyDictionary'; // Hmm - what to add here?  "PPT-PROD-<ORGID>-<EmployeeID>" ??
         };
         Demo.prototype.onEditorSelected = function (id) {
             var state = this.editorStates[this.editorId];
