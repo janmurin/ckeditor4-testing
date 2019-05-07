@@ -1,0 +1,6 @@
+This demo folder provides an example of integrating FLITE into your CKEditor-enabled page.
+
+To use the demo, you need place a ckeditor folder inside this folder, then copy your flite folder
+(the one that includes plugin.js) into ckeditor/plugins.
+You may, of course, use any soft-link/virtual-folder technique that you want
+in order to set up the same logical structure.

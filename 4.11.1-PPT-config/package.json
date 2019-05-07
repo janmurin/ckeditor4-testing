@@ -1,0 +1,14 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "FLITE demo page",
+  "main": "demo.js",
+  "scripts": {},
+  "author": "LoopIndex",
+  "devDependencies": {
+    "@types/ckeditor": "^4.9.4",
+    "@types/core-js": "^0.9.41",
+    "@types/jquery": "^2.0.46",
+    "@types/tinymce": "^4.5.16"
+  }
+}

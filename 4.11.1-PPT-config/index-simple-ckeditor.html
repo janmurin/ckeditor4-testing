@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Track Changes CKEditor Plugin Demo | LoopIndex.com</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato">
+	<link rel="stylesheet" href="css/demo.css?1" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+	<script type="text/javascript" src="ckeditor/plugins/flite/js/flite-interface.js"></script>
+	<script type="text/javascript" src="js/demo-ckeditor.js?1"></script>
+
+</head>
+
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://www.loopindex.com">
+		      	<img alt="LoopIndex logo" src="https://www.loopindex.com/wp-content/uploads/2019/01/logo-white-no-bg.png">
+		      </a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="row lite-heading text-center">
+			<img alt="LoopIndex logo" src="https://www.loopindex.com/wp-content/uploads/2018/03/flite.png">
+		</div>
+
+		<div class="row lite-title text-center">
+			<span>Track Changes CKEditor Plugin</span>
+		</div>
+		<hr id="first-hr">
+
+
+		<div class="main-ui">
+			<div class="controls-container">
+				<div id="supported-versions">
+					<div><span class="version-title">Requires CKEditor <strong>4.2</strong> or higher</span></div>
+					<div>
+						Using <span class="version-title">CKEditor</span> <span class="version-string ckeditor-version"></span>
+						| &nbsp;
+						<span class="version-title">FLITE</span> <span class="version-string flite-version"></span>
+					</div>
+				</div>
+				<div class="controls-segment users-segment">
+					<img id="user-picture" alt="" />
+					<div class="users-select-container">
+						<label class="title">User</label>
+						<select id="users-select"></select>
+					</div>
+				</div>
+				<div class="controls-segment general-controls">
+					<button class="btn" href="" id="test-data">insert demo text</button>
+				</div>
+				<div class="controls-segment general-controls">
+					<button class="btn" href="" id="add-editor">add editor</button>
+				</div>
+			</div>
+			<div class="editor-container">
+				<div class="editor-tabs">
+				</div>
+
+			</div>
+			<div id="copyright" class="row text-center">
+				<span>© Copyright 2018 LoopIndex, This file is part of the FLITE track changes plugin for CKEditor.
+The track changes plugin was written by (David *)Frenkiel (https://github.com/imdfl)</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="editor-tmpl">
+		<textarea cols="80" id="editor1" rows="10">
+			Welcome
+		</textarea>
+	</div>
+
+
+</body>
+
+</html>

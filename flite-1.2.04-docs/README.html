@@ -1,0 +1,73 @@
+<html>
+
+<head>
+	<title>FLITE (Track changes for CKEditor)</title>
+	<style>
+		body {
+			font-family: sans-serif;
+		}
+		.important-note {
+			color: rgb(194, 0, 0);
+		}
+	</style>
+</head>
+
+<body>
+	<div id="preview" class="shadowbox">
+		<h1 id="track-changes-plugin-for-ckeditor">FLITE - Track Changes Plugin for CKEditor</h1>
+		<p style="text-align: center;">
+			<a href="http://www.loopindex.com/flite/demo" target="_blank">Demo Page</a> <a href="http://www.loopindex.com/flite" target="_blank">Web Site</a>
+		</p>
+		<h2 id="main-features">Main Features</h2>
+		<ul>
+			<li>Enable / disable track changes mode</li>
+			<li>Show / hide tracked changes</li>
+			<li>Accept/Reject all/some changes</li>
+			<li>Accept/Reject a single change</li>
+			<li>Display customizable tooltips for each change</li>
+		</ul>
+		<h2 id="getting-started">Getting Started</h2>
+		<ul>
+			<li><span class="important-note">IMPORTANT</span>: FLITE requires <a href="//jquery.com" target="_blank">jQuery</a></li>
+			<li>Add the flite plugin to ckeditor. The simplest way to do this is by adding the following line to ckeditor's configuration
+			(e.g. <code>config.js</code>, which is the default location of the configuration data).
+				<pre><code class="lang-javascript">  config.extraPlugins = 'flite';</code></pre>
+			</li>
+			<li>
+				<p>Optionally include
+					<code>flite-interface.js</code> in your source, so you can use the various constants defined in it rather than string literals.</p>
+				<pre><code class="lang-javascript">&lt;script type="text/javascript" src="ckeditor/plugins/flite/flite-interface.js"&gt;&lt;/script&gt;</code></pre>
+			</li>
+			<li>
+				<p>See the
+					<a href="http://www.loopindex.com/flite/docs/" target="_blank">documentation</a> for all the configuration options.</p>
+			</li>
+		</ul>
+		<h2 id="configuration">Configuration</h2>
+		<p>The FLITE plugin is automatically activated after you install as described above. For the full details of tweaking the loading process, toolbar commands, users and more, see the <a
+			 href="http://www.loopindex.com/flite/docs/" target="_blank">documentation</a>.</p>
+		<h2 id="api">API</h2>
+		<p>The FLITE plugin exposes a wide range of methods, events and properties for controlling and reporting the tracked changes.
+			see the
+			<a href="http://www.loopindex.com/flite/docs/" target="_blank">documentation</a> for details.</p>
+
+		<h3>Notes</h3>
+		<ul>
+			<li>The FLITE tracking engine adds markup to the editor content. All the change tracking data is stored inline, as part of the document.
+			<li> FLITE tracks a wide range of editing actions, but not all of them. Most notably, style edits and search/replace operations are not tracked (they're on our roadmap, though).
+		</ul>
+
+
+		<h3>Browser Compatibility</h3>
+		FLITE has been tested on Firefox 15+ and Chrome 13+. Support for MSIE 9+ is not guaranteed, although the current version seems
+		to work on it.
+
+		<h3>License</h3>
+		Commercial license, details will provided in the next revision<br/>
+		Copyright (c) LoopIndex.
+		Written by (David*)Frenkiel (
+		<a href="https://github.com/imdfl" target="_blank">https://github.com/imdfl</a>)
+	</div>
+</body>
+
+</html>

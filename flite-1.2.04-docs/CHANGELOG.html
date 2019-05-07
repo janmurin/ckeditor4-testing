@@ -1,0 +1,261 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>LoopIndex FLITE change log</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style>
+		body {
+			font-family: sans-serif;
+			margin: 5px 10px;
+			box-sizing: border-box;
+			font-size: 12pt;
+		}
+
+		ul,
+		ol {
+			margin: 4px 2px;
+		}
+
+		.changelog {
+			margin-top: 10px;
+			border-spacing: 0;
+			border-collapse: collapse;
+			max-width: 800px;
+		}
+
+		.changelog .date {
+			white-space: nowrap;
+		}
+
+		.changelog,
+		.changelog td,
+		.changelog th {
+			border: 1px solid #222;
+			padding: 3px 5px;
+			vertical-align: top;
+		}
+
+		.changelog th {
+			text-align: center;
+		}
+
+		.major {
+			color: blue;
+		}
+
+		.minor {
+			color: green;
+		}
+
+		.breaking {
+			color: red;
+		}
+
+		.bugfix {
+			color: #666;
+		}
+
+		.legend-item {
+			display: inline-block;
+			font-size: 0.9em;
+			margin-right: 10px;
+		}
+
+		.legend-item .legend-color {
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			border: 1px solid #555;
+		}
+
+		.legend-color.major {
+			background-color: blue;
+		}
+
+		.legend-color.minor {
+			background-color: green;
+		}
+
+		.legend-color.bugfix {
+			background-color: #666;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>LoopIndex FLITE change log</h1>
+	<div>
+		<div class="legend-item">
+			<div class="legend-color major"></div><span>Major - breaking changes or new features</span>
+		</div>
+		<div class="legend-item">
+			<div class="legend-color minor"></div><span>Minor - improvements, minor features</span>
+		</div>
+		<div class="legend-item">
+			<div class="legend-color bugfix"></div><span>Bug fixes</span>
+		</div>
+	</div>
+	<table class="changelog">
+		<tr>
+			<th>Version</th>
+			<th>Date</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td class="bugfix">1.2.04</td>
+			<td class="date">Apr 09 2019</td>
+			<td>
+				<ul>
+					<li>Fixed tinymce incompatibility with the non-editable plugin. NOTE: FLITE does not recognize the <code>noneditable_regexp</code> configuration option.</li>
+					<li>Fixed incompatibility with ckeditor scayt plugin.</li>
+				</ul>
+			</td>
+		<tr>
+		<tr>
+			<td class="bugfix">1.2.03</td>
+			<td class="date">Mar 22 2019</td>
+			<td>
+				<ul>
+					<li>Fixed null reference in some tinymce configurations.</li>
+					<li>Restored IE 10/11 compatibility.</li>
+					<li>Tooltips now display correctly across browsers and iframe/div configurations.</li>
+				</ul>
+			</td>
+		<tr>
+		<tr>
+			<td class="bugfix">1.2.01</td>
+			<td class="date">Mar 18 2019</td>
+			<td>
+				<ul>
+					<li>Tooltips no longer displayed while typing</code></li>
+					<li>list and table tracking bug fixes</li>
+				</ul>
+			</td>
+		<tr>
+			<td class="major">1.2.0</td>
+			<td class="date">Mar 10 2019</td>
+			<td>
+				<p>
+					Version 1.2.0 brings TinyMCE 5 compatibility, new and better tooltips (along with simpler tooltip
+					options), better IME support and several bug fixes around deletion and caret placement. Be sure to
+					read the documentation regarding <code>FLITE.configuration</code>, as some configuration fields have
+					changed.
+				</p>
+				<ul>
+					<li>Added a new configuration field, <code>styleUrls</code> which allows you to inject the content
+						of any css file into the edited document. The code currently translates the deprecated
+						<code>cssPath</code> field into the new option, but this flow is likely to be removed in a few
+						versions.</code></li>
+					<li>Added a new configuration field, <code>allowQuitWithChanges</code>. If set to true, FLITE does
+						not require the user to resolve all changes before pausing tracking.</li>
+					<li>FLITE for TinyMCE now supports the <code>commands</code> configuration option</li>
+					<li>Resolved more quirks in IME support (complex input, e.g. Japanese)</li>
+					<li>Fixed issues with deletion of line breaks and paragraphs.</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td class="bugfix">1.1.28</td>
+			<td class="date">Feb 22 2019</td>
+			<td>
+				<ul>
+					<li>Resolved quirks in IME support (complex input, e.g. Japanese)</li>
+					<li>Fixed issues with selection boundaries when deleting selected text</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td class="bugfix">1.1.26</td>
+			<td class="date">Feb 01 2019</td>
+			<td>
+				<ul>
+					<li>Bug fixes and tweaks around widget html during cut/copy/paste</li>
+					<li>Bug fixes around caret positioning following various editing operations</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td class="bugfix">1.1.22</td>
+			<td class="date">Jan 20 2019</td>
+			<td>
+				<ul>
+					<li>TinyMCE version now reads settings for userName, userId, ignoreSelectors</li>
+					<li>Fixes in TinyMCE version plugin events</li>
+					<li>Fixes around deletions in content from mixed authors</li>
+					<li>Tracking is disabled when the Find dialog is open (CKEditor only)</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td class="bugfix">1.1.19</td>
+			<td class="date">Dec 24 2018</td>
+			<td>
+				<ul>
+					<li>Tracking engine tweaks designed to handle char #8203 inserted profusely on Safari.</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td class="minor">1.1.18</td>
+			<td class="date">Dec 15 2018</td>
+			<td>
+				<ul>
+					<li>FLITE now starts with a default user</li>
+					<li>First release for TinyMCE</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td class="major">1.1.15</td>
+			<td class="date">Oct 07 2018</td>
+			<td>
+				<ul>
+					<li>Several bug fixes around caret problems</li>
+					<li>Potentially breaking change: switched the bundled jQuery version from 1.9 to 3.3.1. Check your
+						apps and include a different version of jQuery in the page if the one bundled with FLITE is not
+						compatible with your target browsers</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td class="minor">1.1.10</td>
+			<td class="date">Oct 07 2018</td>
+			<td>
+				<ul>
+					<li>Fixed accept/reject problems in some complex DOM layouts</li>
+					<li>Fixed caret positioning problems around BR nodes that CKEditor inserts into list items.</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td class="minor">1.1.9</td>
+			<td class="date">Oct 02 2018</td>
+			<td>
+				<ul>
+					<li class="breaking">flite-interface.js has been moved to the js folder, please update your includes
+					</li>
+					<li>Fixed issues with deletion of BR nodes</li>
+					<li>Fixed several issues with insertion and deletion within tracked changes</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td class="bugfix">1.1.6</td>
+			<td class="date">Sep 10 2018</td>
+			<td>Fixed problems with caret positioning when deleting on edges of tracked regions (Issue #67).</td>
+		</tr>
+		<tr>
+			<td class="minor">1.1.2</td>
+			<td class="date">Aug 2018</td>
+			<td>Added tracking of widgets</td>
+		</tr>
+		<tr>
+			<td class="major">1.1.1</td>
+			<td class="date">July 2018</td>
+			<td>FLITE now tracks tables and lists</td>
+		</tr>
+	</table>
+</body>
+
+</html>

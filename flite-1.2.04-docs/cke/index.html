@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LoopIndex FLITE (Track Changes) for CKEditor</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="fragment" content="!">
+
+  
+
+  <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+  <link rel="stylesheet" href="resources/css/app.css" type="text/css" />
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+
+  <script type="text/javascript" src="extjs/ext-all.js"></script>
+  <script type="text/javascript" src="data.js"></script>
+
+  <script type="text/javascript" src="app.js"></script>
+
+  <link rel='stylesheet' href='li.css' type='text/css'>
+
+</head>
+<body id="ext-body">
+
+  <div id="loading"><span class="title">LoopIndex FLITE (Track Changes) for CKEditor</span><span class="logo"></span></div>
+
+  <div id="header-content">LoopIndex FLITE (Track Changes) for CKEditor</div>
+  <div id='welcome-content' style='display:none'><body>
+	<div class="docs-content">
+		<h1 id="track-changes-plugin-for-ckeditor">Welcome to FLITE for CKEditor</h1>
+		<p class="top-links">
+			<a class="link-line" href="#!/api">Full API documentation</a>
+			<a class="link-line" href="http://www.loopindex.com/flite/demo" target="_blank">Demo Page</a>
+			<a class="link-line" href="http://www.loopindex.com/flite" target="_blank">LoopIndex site</a>
+		</p>
+
+		<h2>Requirements</h2>
+		<ul>
+			<li><span class="important-note">IMPORTANT</span>: FLITE requires <a href="//jquery.com" target="_blank">jQuery</a></li>
+			<li>FLITE has been tested on Firefox 15+, Chrome 13+, Safari 10.x and Edge. Support for MSIE 9+ is not guaranteed, although the current
+			version seems to work on it.
+		</ul>
+
+
+		<h2 id="main-features">Main Features</h2>
+		<ul>
+			<li>Enable / disable track changes mode</li>
+			<li>Show / hide tracked changes</li>
+			<li>Accept/Reject all/some changes</li>
+			<li>Display customizable tooltips tracked changes</li>
+		</ul>
+
+		<h2 id="getting-started">Getting Started</h2>
+		<ul>
+			<li>Add the flite plugin to ckeditor. The simplest way to do this is by adding the following line to ckeditor's
+				configuration
+				(e.g. <code>config.js</code>, which is the default location of the configuration data).
+				<pre><code class="lang-javascript">  config.extraPlugins = 'flite';</code></pre>
+			</li>
+			<li>
+				<p>Optionally include
+					<code>flite-interface.js</code> in your source, so you can use the various constants defined in it rather than
+					string literals.</p>
+				<pre><code class="lang-javascript">&lt;script type="text/javascript" src="ckeditor/plugins/flite/js/flite-interface.js"&gt;&lt;/script&gt;</code></pre>
+			</li>
+		</ul>
+		<h2 id="configuration">Configuration</h2>
+		<p>The FLITE plugin is automatically activated after you install as described above. For the full details of tweaking
+			the loading process, toolbar commands, users and more, see the <a href="#!/api/FLITE.configuration">API documentation</a> for full details.</p>
+			<h2 id="api">API</h2>
+			<p>The FLITE plugin exposes a wide range of methods, events and properties for controlling and reporting
+				the tracked
+				changes. See the <a href="#!/api/FLITE.FLITEPlugin">API documentation</a> for details.</p>
+			<p>In order to interact with a FLITE plugin instance, you need to obtain a reference to one.</p>
+				<p>The simplest way to do this is through a fully initialized CKEditor instance, e.g.
+					<code>myEditor.plugins.flite.findPlugin(myEditor)</code>.
+				</p>
+				<p>
+				The reason you can't access the instance directly, is that CKEditor maintains one plugin instance per web page, regardless of the number of editors. The master FLITE plugin creates plugin instances per editor and these can be accessed through the <code>findPlugin(editor)</code> API</code>.</p>
+			</p>
+				<p>
+					You can also get a reference to a FLITE plugin instance by listening to the event
+					<code>FLITE.Events.INIT</code> (or <code>"flite:init" in string literal form</code>)
+
+					fired by the editor instance. For example:
+					<pre><code>
+var editor = CKEditor.replace({
+// configuration parameters
+});
+editor.on("flite:init", function(event) {
+	var flite = event.data.flite;
+	// do something with the instance
+});
+</code></pre>
+				</p>		<h2>Notes</h2>
+		<ul>
+			<li>The FLITE tracking engine adds markup to the editor content. All the change tracking data is stored inline, as
+				part of the document.
+			<li> FLITE tracks a wide range of editing actions, but not all of them. Most notably, style edits and search/replace
+				operations are not tracked (they're on our roadmap, though).
+		</ul>
+
+		<h2>License</h2>
+		<p>
+			Please visit our <a target="_blank" href="https://www.loopindex.com/software-license-for-track-changes-ckeditor-plugin/">License page</a><br />
+		</p>
+	</div>
+</body></div>
+            <div id='categories-content' style='display:none'>
+            <div class='section'>
+<h1>FLITE</h1>
+<div class='left-column'>
+<h3>Others...</h3>
+<ul class='links'>
+<li><a href="#!/api/FLITE" rel="FLITE" class="docClass">FLITE</a></li>
+<li><a href="#!/api/FLITE.AcceptRejectOptions" rel="FLITE.AcceptRejectOptions" class="docClass">FLITE.AcceptRejectOptions</a></li>
+<li><a href="#!/api/FLITE.Commands" rel="FLITE.Commands" class="docClass">FLITE.Commands</a></li>
+<li><a href="#!/api/FLITE.Events" rel="FLITE.Events" class="docClass">FLITE.Events</a></li>
+<li><a href="#!/api/FLITE.FLITEPlugin" rel="FLITE.FLITEPlugin" class="docClass">FLITE.FLITEPlugin</a></li>
+<li><a href="#!/api/FLITE.LIChangeTracker" rel="FLITE.LIChangeTracker" class="docClass">FLITE.LIChangeTracker</a></li>
+<li><a href="#!/api/FLITE.configuration" rel="FLITE.configuration" class="docClass">FLITE.configuration</a></li>
+<li><a href="#!/api/FLITE.flite" rel="FLITE.flite" class="docClass">FLITE.flite</a></li>
+</ul>
+</div>
+<div class='middle-column'>
+</div>
+<div class='right-column'>
+</div>
+<div style='clear:both'></div>
+</div>
+<div class='section'>
+<h1>Others...</h1>
+<div class='left-column'>
+<h3>Others...</h3>
+<ul class='links'>
+<li><a href="#!/api/" rel="" class="docClass"></a></li>
+<li><a href="#!/api/MutationFilterResult" rel="MutationFilterResult" class="docClass">MutationFilterResult</a></li>
+</ul>
+</div>
+<div class='middle-column'>
+</div>
+<div class='right-column'>
+</div>
+<div style='clear:both'></div>
+</div>
+          </div>
+
+  
+  
+  <div id='footer-content' style='display: none'><div id='myfooter' style='text-align:left;margin-left:20px;font-size:11px;'><pre>Copyright 2019 LoopIndex, This file is part of the Track Changes plugin for CKEditor. * Copyright (C) 2019 LoopIndex - All Rights Reserved * Written by (David *)Frenkiel (https://github.com/imdfl)</pre></div></div>
+
+  <script type='text/javascript'>Docs.otherProducts = [{text: 'FLITE for TinyMCe', href: '/flite/docs/tmce/'},];</script>
+
+  <script type="text/javascript">
+  (function(){
+    var protocol = (document.location.protocol === "https:") ? "https:" : "http:";
+    document.write("<link href='"+protocol+"//fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css' />");
+  })();
+  </script>
+
+</body>
+</html>
